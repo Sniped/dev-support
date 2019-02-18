@@ -1,3 +1,5 @@
+const Discord = require('discord.js');
+
 module.exports = {
 	help: {
 		description: 'help command', 
@@ -7,6 +9,9 @@ module.exports = {
 
 module.exports.run = (client, message) => {
 	
-	message.channel.send('https://github.com/MrScopes/discord-bot/');
+	const help = new Discord.MessageEmbed()
+		.addField('Temporary Help', 'https://github.com/MrScopes/dev-support')
+		.setFooter(`Requested by ${message.author.tag}`);
+	message.channel.send(help);
 	
 };
